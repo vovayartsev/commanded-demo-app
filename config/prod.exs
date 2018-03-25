@@ -65,3 +65,9 @@ import_config "prod.secret.exs"
 
 config :commanded,
   event_store_adapter: Commanded.EventStore.Adapters.EventStore
+
+config :eventstore, EventStore.Storage,
+  serializer: Commanded.Serialization.JsonSerializer,
+  database: "benchmark_events_dev",
+  hostname: "localhost",
+  pool_size: 15

@@ -8,7 +8,9 @@ defmodule Benchmark.Festivals do
       festival_uuid: uuid,
       initial_tickets_count: tickets_count
     }
-    |> Benchmark.Router.dispatch(consistency: :eventual)
+    |> Benchmark.Router.dispatch()
+
+    {:ok, uuid}
   end
 
   def book_ticket(festival_uuid, username) do
